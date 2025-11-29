@@ -2,53 +2,169 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Samuele Dell'Erba - AI Research</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samuele Dell'Erba - Academic Profile</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 750px;
-            margin: 40px auto;
-            line-height: 1.6;
+        :root {
+            --primary-color: #2c3e50; /* Dark Blue/Grey */
+            --accent-color: #2980b9; /* Mila-ish Blue */
+            --text-color: #333;
+            --bg-color: #f9f9f9;
+            --container-width: 800px;
         }
-        h1 { margin-top: 0; }
-        a { color: #0066cc; }
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: #fff;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+            min-height: 100vh;
+        }
+        header {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+        }
+        h1 { margin: 0; color: var(--primary-color); font-size: 2.5em; }
+        h2 { color: var(--primary-color); border-bottom: 1px solid #eee; padding-bottom: 10px; margin-top: 40px; }
+        h3 { margin-bottom: 5px; color: #444; }
+        .subtitle { font-size: 1.2em; color: #666; font-weight: 300; }
+        .links a { margin-right: 15px; color: var(--accent-color); text-decoration: none; font-weight: bold; }
+        .links a:hover { text-decoration: underline; }
+        
+        .entry { margin-bottom: 25px; }
+        .entry-header { display: flex; justify-content: space-between; align-items: baseline; }
+        .date { font-size: 0.9em; color: #777; font-family: monospace; }
+        .details { font-size: 0.95em; color: #555; margin-top: 5px; }
+        .tech-stack { font-size: 0.85em; background: #eee; padding: 2px 6px; border-radius: 4px; color: #444; }
+        
+        /* Research Specific */
+        .publication-title { font-weight: bold; color: #000; }
+        .authors { font-style: italic; color: #555; }
+        
+        @media (max-width: 600px) {
+            .entry-header { flex-direction: column; }
+        }
     </style>
 </head>
 <body>
 
-<h1>Samuele Dell'Erba</h1>
-<p><strong>AI Researcher · Computer Engineering · 42 Firenze</strong></p>
+<div class="container">
+    <header>
+        <h1>Samuele Dell'Erba</h1>
+        <p class="subtitle">B.Sc. Student in Computer Engineering & AI Researcher</p>
+        <div class="links">
+            <a href="mailto:samuele.dellerba@edu.unifi.it">Email</a>
+            <a href="https://github.com/SamyBravy">GitHub</a>
+            <a href="https://linkedin.com/in/samuele-dell-erba">LinkedIn</a>
+            <a href="Curriculum.pdf" target="_blank">[ Download CV ]</a>
+        </div>
+    </header>
 
-<p>
-I am a Computer Engineering student at the University of Florence and an AI researcher working on diffusion models, 
-inference methods, and generative AI. I am currently completing advanced training at 42 Firenze 
-after finishing the Common Core, and collaborating on research with the MICC (Media Integration and Communication Center).
-</p>
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            I am a final-year Computer Engineering student at the <strong>University of Florence</strong> (GPA 30/30 cum laude)  and an advanced student at <strong>École 42 Firenze</strong>[cite: 7]. 
+            I am pursuing these two rigorous curricula in parallel to combine strong theoretical foundations with practical software engineering skills.
+        </p>
+        <p>
+            My research interests lie in <strong>Generative Deep Learning</strong> and <strong>Computer Vision</strong>. 
+            Currently, I am researching optimization-based visual inversion methods for text-to-image models[cite: 19].
+        </p>
+    </section>
 
-<h2>Links</h2>
-<ul>
-    <li><a href="Samuele_DellErba_CV.pdf">Download CV (PDF)</a></li>
-    <li><a href="https://github.com/SamyBravy" target="_blank">GitHub</a></li>
-    <li><a href="https://www.linkedin.com/in/samuele-dell-erba" target="_blank">LinkedIn</a></li>
-</ul>
+    <section id="research">
+        <h2>Research & Publications</h2>
+        <div class="entry">
+            <div class="publication-title">Training-Free Diffusion Priors for Text-to-Image Generation via Optimization-based Visual Inversion</div>
+            <div class="authors"><strong>S. Dell'Erba</strong>, A. D. Bagdanov</div>
+            <div class="details">
+                Technical Report (2025) - MICC (Media Integration and Communication Center).<br>
+                We propose a training-free method leveraging Optimization-based Visual Inversion (OVI) to replace diffusion priors.
+                <br>
+                <span class="tech-stack">Preprint available on arXiv</span> [cite: 20, 21]
+            </div>
+        </div>
+    </section>
 
-<h2>Research</h2>
-<p><strong>Prior Replacement in Diffusion Models using OVI inversion</strong><br>
-Work supervised by Prof. Andrew D. Bagdanov and Dr. Marco Mistretta.  
-<a href="https://github.com/SamyBravy/Diffusion_priors">GitHub repository</a></p>
+    <section id="education">
+        <h2>Education</h2>
+        <div class="entry">
+            <div class="entry-header">
+                <h3>University of Florence</h3>
+                <span class="date">Sep 2023 - Present</span>
+            </div>
+            <div>B.Sc. in Computer Engineering</div>
+            <div class="details">Current GPA: 30/30 with honors. Core focus on Algorithms, Theoretical CS, and Probability.</div>
+        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <h3>École 42 Firenze</h3>
+                <span class="date">Oct 2023 - Present</span>
+            </div>
+            <div>Advanced Track in Data & AI</div>
+            <div class="details">Peer-to-peer coding institute. First student of the cohort to complete the core curriculum (C/C++, Unix Systems)[cite: 13]. Specialization in AI (RNCP-7 Level)[cite: 10].</div>
+        </div>
+    </section>
 
-<h2>42 Firenze</h2>
-<p>
-Completed the 42 Common Core (Aug 2024).  
-Currently in specialization track (Mastery).  
-</p>
+    <section id="projects">
+        <h2>Selected Projects</h2>
+        
+        <div class="entry">
+            <div class="entry-header">
+                <h3>Avatar Subsystem & AI Pipelines</h3>
+                <span class="date">NYOUS Startup</span>
+            </div>
+            <div class="details">
+                Engineered the avatar subsystem for a news aggregation platform, focusing on audio-driven lip sync and body animation[cite: 25, 26].
+            </div>
+        </div>
 
-<h2>Projects</h2>
-<ul>
-    <li><a href="https://github.com/SamyBravy/miniRT">miniRT</a> — Ray tracing engine</li>
-    <li><a href="https://github.com/SamyBravy/ft_irc">ft_irc</a> — IRC server</li>
-    <li><a href="https://github.com/SamyBravy/Trascendence">Trascendence</a> — Full-stack web app</li>
-</ul>
+        <div class="entry">
+            <div class="entry-header">
+                <h3>Mini-Raytracer</h3>
+                <span class="date">C / Linear Algebra</span>
+            </div>
+            <div class="details">
+                Built a ray-tracer engine from scratch using a minimal graphics library. Implemented Phong illumination, multi-spot lighting, and linear algebra engine[cite: 57].
+            </div>
+        </div>
+
+        <div class="entry">
+            <div class="entry-header">
+                <h3>Logistic Regression from Scratch</h3>
+                <span class="date">Python / NumPy</span>
+            </div>
+            <div class="details">
+                Implemented a multi-class classifier purely in Python/NumPy without high-level ML libraries. Built custom tools to visualize feature correlations and gradient descent optimization[cite: 61, 62].
+            </div>
+        </div>
+    </section>
+    
+    <section id="honors">
+        <h2>Honors & Service</h2>
+        <ul>
+            <li><strong>42 Global Games (Paris 2025):</strong> Selected as top 4 representative for 42 Firenze[cite: 29, 31].</li>
+            <li><strong>Hack Attack Award (2024):</strong> Best Idea Award for a noise-pollution awareness social network[cite: 33].</li>
+            <li><strong>Carta del Merito (2024):</strong> Awarded for maximum score (100/100) in National Exams[cite: 35, 37].</li>
+            <li><strong>EUniWell Student Board:</strong> Elected representative focusing on social well-being[cite: 40].</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p style="text-align: center; color: #999; font-size: 0.8em; margin-top: 50px;">
+            &copy; 2025 Samuele Dell'Erba. Hosted on GitHub Pages.
+        </p>
+    </footer>
+</div>
 
 </body>
 </html>

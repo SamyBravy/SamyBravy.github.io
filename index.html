@@ -41,16 +41,38 @@
             padding: 60px 0;
         }
 
-        /* Header */
+        /* Header & Photo Styling */
         header {
             margin-bottom: 60px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .header-content {
+            flex: 1;
         }
         
+        .header-photo {
+            flex-shrink: 0;
+        }
+
+        .header-photo img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent);
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.2); /* Glow effect */
+        }
+
         h1 {
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 10px;
             letter-spacing: -1px;
+            line-height: 1.2;
         }
 
         .tagline {
@@ -195,7 +217,23 @@
         .btn:hover { background: var(--accent); color: var(--bg-color); }
 
         /* Responsive */
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column-reverse; /* Photo on top on mobile */
+                align-items: center;
+                text-align: center;
+                gap: 20px;
+            }
+            
+            .header-photo img {
+                width: 140px;
+                height: 140px;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+
             h1 { font-size: 2rem; }
             .resume-header { flex-direction: column; }
             .date { margin-top: 2px; }
@@ -205,19 +243,26 @@
 <body>
 
 <div class="container">
-    <!-- Header -->
+    <!-- Header with Photo -->
     <header>
-        <h1>Samuele Dell'Erba</h1>
-        <div class="tagline">Computer Engineering Student | 42 Student | Startup Member | Student Researcher </div>
-        <p style="color: var(--text-secondary); max-width: 600px; margin-bottom: 20px;">
-            Developing high-performance systems and exploring generative AI, optimizing text-to-image models at MICC and building AI pipelines at NYOUS.
-            Passionate about Low-Level Programming, AI & Computer Vision.
-        </p>
-        <div class="social-links">
-            <a href="https://github.com/SamyBravy" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://linkedin.com/in/samuele-dell-erba" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="mailto:samuele.dellerba@edu.unifi.it"><i class="fas fa-envelope"></i></a>
-            <a href="Curriculum.pdf" class="btn" style="margin-top: -5px; padding: 5px 10px;">Download CV</a>
+        <div class="header-content">
+            <h1>Samuele Dell'Erba</h1>
+            <div class="tagline">Computer Engineering Student | 42 Student | Startup Member | Student Researcher </div>
+            <p style="color: var(--text-secondary); margin-bottom: 20px;">
+                Developing high-performance systems and exploring generative AI, optimizing text-to-image models at MICC and building AI avatars at NYOUS.<br>
+                Passionate about Low-Level Programming, AI & Computer Vision.
+            </p>
+            <div class="social-links">
+                <a href="https://github.com/SamyBravy" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/samuele-dell-erba" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:samuele.dellerba@edu.unifi.it"><i class="fas fa-envelope"></i></a>
+                <a href="Curriculum.pdf" class="btn" style="margin-top: -5px; padding: 5px 10px;">Download CV</a>
+            </div>
+        </div>
+        
+        <!-- PHOTO SECTION: Rinomina la tua foto 'me.jpg' e mettila nella stessa cartella -->
+        <div class="header-photo">
+            <img src="me.jpg" alt="Samuele Dell'Erba">
         </div>
     </header>
 
@@ -233,7 +278,8 @@
             <p class="description">
                 Conducted research on a training-free method leveraging Optimization-based Visual Inversion (OVI) to replace diffusion priors in text-to-image models.
                 <br><br>
-                <em>Technical Report:</em> <a href="https://arxiv.org/abs/2511.20821" target="_blank" class="text-link">"Training-Free Diffusion Priors for Text-to-Image Generation via Optimization-based Visual Inversion"</a> (2025).
+                Technical Report: <a href="https://arxiv.org/abs/2511.20821" target="_blank" class="text-link">
+                    <em>Training-Free Diffusion Priors for Text-to-Image Generation via Optimization-based Visual Inversion</em></a> (2025).  S. Dell’Erba, A. D. Bagdanov.
             </p>
         </div>
 
@@ -255,13 +301,13 @@
         <div class="grid">
             <div class="card">
                 <h3><a href="https://github.com/PASBarbari/Transcendence" target="_blank">Distributed Microservices Platform <i class="fas fa-external-link-alt" style="font-size: 0.7em; margin-left: 5px;"></i></a></h3>
-                <div class="tech-stack">Docker, Kubernetes, Redis, Go/Python</div>
+                <div class="tech-stack">Docker, Kubernetes, Redis, Grafana, Prometheus, Django, Python, Javascript</div>
                 <p class="description">Engineered a scalable web app using K8s. Integrated Redis for caching, Grafana for monitoring, and real-time WebSockets for a PvP game engine.</p>
             </div>
             
             <div class="card">
                 <h3>Systems Programming Suite</h3>
-                <div class="tech-stack">C, C++, Unix, Assembly</div>
+                <div class="tech-stack">C, C++, Unix</div>
                 <p class="description">
                     Re-implemented standard library functions. Built a 
                     <a href="https://github.com/SamyBravy/Minishell" target="_blank" class="text-link">Unix Shell</a> (process control), 
@@ -271,9 +317,12 @@
             </div>
 
             <div class="card">
-                <h3><a href="https://github.com/SamyBravy/dslr" target="_blank">ML From Scratch <i class="fas fa-external-link-alt" style="font-size: 0.7em; margin-left: 5px;"></i></a></h3>
+                <h3><a href="https://github.com/SamyBravy/dslr" target="_blank">Logistic Regression & Data Analysis<i class="fas fa-external-link-alt" style="font-size: 0.7em; margin-left: 5px;"></i></a></h3>
                 <div class="tech-stack">Python, NumPy, Math</div>
-                <p class="description">Built a multi-class classifier using Logistic Regression purely in NumPy without high-level ML libraries. Implemented custom Backprop and SGD.</p>
+                <p class="description">Built a multi-class classifier (One-vs-All) purely
+in Python/NumPy (no high-level ML libraries), leveraging Batch and Stochastic
+Gradient Descent with Cross-Entropy Loss. Developed a custom statistical and
+visualization toolkit to analyze feature correlations.</p>
             </div>
         </div>
     </section>
@@ -284,7 +333,7 @@
         <div class="resume-item">
             <div class="resume-header">
                 <span class="role">B.Sc. in Computer Engineering</span>
-                <span class="date">2023 – 2026 (Expected)</span>
+                <span class="date">2023 – 2026</span>
             </div>
             <p class="description">University of Florence | <strong>GPA: 30/30 with honors</strong><br>
             Core: Algorithms, OS, Theoretical CS, Probability.</p>
@@ -306,11 +355,11 @@
         <div class="grid">
             <div class="card" style="border: none; padding: 10px 0; background: none;">
                 <h3 style="margin-bottom: 5px;">🏆 Selected for 42 Global Games</h3>
-                <p class="description">Top 4 students representing 42 Firenze in Paris based on technical scores.</p>
+                <p class="description">Top 4 students representing 42 Firenze in Paris based on technical scores and community engagement.</p>
             </div>
             <div class="card" style="border: none; padding: 10px 0; background: none;">
                 <h3 style="margin-bottom: 5px;">💡 Best Idea Award</h3>
-                <p class="description">Hack Attack Hackathon (Nana Bianca × 42) for noise-pollution awareness network.</p>
+                <p class="description">Hack Attack Hackathon (Nana Bianca × 42) for designing a noise-pollution awareness social network.</p>
             </div>
             <div class="card" style="border: none; padding: 10px 0; background: none;">
                 <h3 style="margin-bottom: 5px;">🏛️ Student Board Member</h3>
@@ -323,16 +372,26 @@
     <section>
         <h2>Technical Skills</h2>
         <div class="skills-container">
-            <span class="skill-tag">C / C++</span>
+            <span class="skill-tag">C</span>
+            <span class="skill-tag">C++</span>
             <span class="skill-tag">Python</span>
             <span class="skill-tag">Rust</span>
-            <span class="skill-tag">PyTorch</span>
-            <span class="skill-tag">Computer Vision</span>
-            <span class="skill-tag">Diffusion Models</span>
-            <span class="skill-tag">Docker & K8s</span>
-            <span class="skill-tag">Linux / Bash</span>
             <span class="skill-tag">Assembly</span>
+            <span class="skill-tag">C#</span>
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">Bash</span>
+            <span class="skill-tag">PyTorch</span>
+            <span class="skill-tag">NumPy</span>
+            <span class="skill-tag">Pandas</span>
+            <span class="skill-tag">Django</span>
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">Kubernetes</span>
             <span class="skill-tag">Git</span>
+            <span class="skill-tag">Makefiles</span>
+            <span class="skill-tag">Unity</span>
+            <span class="skill-tag">MATLAB/Octave</span>
+            <span class="skill-tag">LaTeX</span>
         </div>
     </section>
 

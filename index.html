@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Samuele Dell'Erba | Computer Engineering & AI Researcher</title>
+    <title>Samuele Dell'Erba | Computer Engineering Student | 42 Student | Startup Member | Student Researcher </title>
     <meta name="description" content="Portfolio of Samuele Dell'Erba. CS Student at UniFi & 42 Firenze. AI Researcher and Developer.">
     
     <!-- Fonts -->
@@ -74,6 +74,18 @@
 
         .social-links a:hover { color: var(--accent); }
 
+        /* General Link Styling in Text */
+        a.text-link {
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--accent);
+            transition: all 0.2s;
+        }
+        a.text-link:hover {
+            color: var(--accent-hover);
+            border-bottom: 1px solid var(--accent-hover);
+        }
+
         /* Sections */
         section { margin-bottom: 60px; }
         
@@ -124,6 +136,22 @@
         }
 
         .card h3 { margin-bottom: 10px; font-size: 1.1rem; }
+        
+        .card h3 a {
+            color: var(--text-primary);
+            text-decoration: none;
+            background-image: linear-gradient(var(--accent), var(--accent));
+            background-position: 0% 100%;
+            background-repeat: no-repeat;
+            background-size: 0% 2px;
+            transition: background-size .3s;
+        }
+
+        .card:hover h3 a {
+            color: var(--accent);
+            background-size: 100% 2px;
+        }
+
         .tech-stack {
             font-size: 0.8rem;
             color: var(--accent);
@@ -180,11 +208,10 @@
     <!-- Header -->
     <header>
         <h1>Samuele Dell'Erba</h1>
-        <div class="tagline">Computer Engineering Student | AI Researcher | 42 Firenze</div>
+        <div class="tagline">Computer Engineering Student | 42 Student | Startup Member | Student Researcher </div>
         <p style="color: var(--text-secondary); max-width: 600px; margin-bottom: 20px;">
-            Developing high-performance systems and exploring generative AI. 
-            Currently optimizing text-to-image models at MICC and building AI pipelines at NYOUS.
-            Passionate about low-level programming, distributed systems, and computer vision.
+            Developing high-performance systems and exploring generative AI, optimizing text-to-image models at MICC and building AI pipelines at NYOUS.
+            Passionate about Low-Level Programming, AI & Computer Vision.
         </p>
         <div class="social-links">
             <a href="https://github.com/SamyBravy" target="_blank"><i class="fab fa-github"></i></a>
@@ -206,17 +233,18 @@
             <p class="description">
                 Conducted research on a training-free method leveraging Optimization-based Visual Inversion (OVI) to replace diffusion priors in text-to-image models.
                 <br><br>
-                <em>Tech Report:</em> "Training-Free Diffusion Priors for Text-to-Image Generation via Optimization-based Visual Inversion" (2025).
+                <em>Technical Report:</em> <a href="https://arxiv.org/abs/2511.20821" target="_blank" class="text-link">"Training-Free Diffusion Priors for Text-to-Image Generation via Optimization-based Visual Inversion"</a> (2025).
             </p>
         </div>
 
         <div class="resume-item">
             <div class="resume-header">
-                <span class="role">AI Developer <span class="company">— NYOUS</span></span>
+                <span class="role">AI Developer <span class="company">— <a href="https://nyous.online/" target="_blank" class="text-link" style="border-bottom: none;">NYOUS</a></span></span>
                 <span class="date">Apr 2025 – Present</span>
             </div>
             <p class="description">
-                Designing AI pipelines for news summarization and avatar-based video anchors. Engineered the Avatar subsystem focusing on audio-driven lip sync and body animation.
+                Design and implementation of AI pipelines for news summarization, audio generation, and avatar-based video news anchors.
+                Engineered the Avatar subsystem, focusing on audio-driven lip sync and body animation.
             </p>
         </div>
     </section>
@@ -226,7 +254,7 @@
         <h2>Selected Technical Projects</h2>
         <div class="grid">
             <div class="card">
-                <h3>Distributed Microservices Platform</h3>
+                <h3><a href="https://github.com/PASBarbari/Transcendence" target="_blank">Distributed Microservices Platform <i class="fas fa-external-link-alt" style="font-size: 0.7em; margin-left: 5px;"></i></a></h3>
                 <div class="tech-stack">Docker, Kubernetes, Redis, Go/Python</div>
                 <p class="description">Engineered a scalable web app using K8s. Integrated Redis for caching, Grafana for monitoring, and real-time WebSockets for a PvP game engine.</p>
             </div>
@@ -234,11 +262,16 @@
             <div class="card">
                 <h3>Systems Programming Suite</h3>
                 <div class="tech-stack">C, C++, Unix, Assembly</div>
-                <p class="description">Re-implemented standard library functions. Built a Unix Shell (process control), a Ray-Tracer (linear algebra engine), and a non-blocking IRC Server.</p>
+                <p class="description">
+                    Re-implemented standard library functions. Built a 
+                    <a href="https://github.com/SamyBravy/Minishell" target="_blank" class="text-link">Unix Shell</a> (process control), 
+                    a <a href="https://github.com/SamyBravy/miniRT" target="_blank" class="text-link">Ray-Tracer</a> (linear algebra engine), 
+                    and a <a href="https://github.com/SamyBravy/ft_irc" target="_blank" class="text-link">non-blocking IRC Server</a>.
+                </p>
             </div>
 
             <div class="card">
-                <h3>ML From Scratch</h3>
+                <h3><a href="https://github.com/SamyBravy/dslr" target="_blank">ML From Scratch <i class="fas fa-external-link-alt" style="font-size: 0.7em; margin-left: 5px;"></i></a></h3>
                 <div class="tech-stack">Python, NumPy, Math</div>
                 <p class="description">Built a multi-class classifier using Logistic Regression purely in NumPy without high-level ML libraries. Implemented custom Backprop and SGD.</p>
             </div>
@@ -304,7 +337,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2025 Samuele Dell'Erba. Built with code, not builders.</p>
+        <p>&copy; 2025 Samuele Dell'Erba.</p>
     </footer>
 </div>
 

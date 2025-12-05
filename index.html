@@ -3,328 +3,308 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Samuele Dell'Erba | Aspiring AI Researcher</title>
+    <title>Samuele Dell'Erba | Computer Engineering & AI Researcher</title>
+    <meta name="description" content="Portfolio of Samuele Dell'Erba. CS Student at UniFi & 42 Firenze. AI Researcher and Developer.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
         :root {
-            --bg-color: #ffffff;
-            --text-color: #212529;
-            --primary-color: #0056b3; 
-            --secondary-color: #495057;
-            --accent-color: #007bff;
-            --border-color: #e9ecef;
-            --container-width: 900px;
-            --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-        }
-        
-        /* Dark Mode */
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --bg-color: #121212;
-                --text-color: #e0e0e0;
-                --primary-color: #6c95ff;
-                --secondary-color: #adb5bd;
-                --accent-color: #8ab4f8;
-                --border-color: #343a40;
-            }
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --accent: #38bdf8;
+            --accent-hover: #0ea5e9;
+            --border: #334155;
         }
 
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
         body {
-            font-family: var(--font-main);
-            line-height: 1.7;
-            color: var(--text-color);
+            font-family: 'Inter', sans-serif;
             background-color: var(--bg-color);
-            margin: 0;
-            padding: 20px;
-            transition: background-color 0.3s, color 0.3s;
-        }
-        .container {
-            max-width: var(--container-width);
-            margin: 40px auto;
+            color: var(--text-primary);
+            line-height: 1.6;
             padding: 0 20px;
         }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 0;
+        }
+
+        /* Header */
         header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            padding-bottom: 30px;
-            border-bottom: 1px solid var(--border-color);
-            margin-bottom: 40px;
-            flex-wrap: wrap;
+            margin-bottom: 60px;
         }
-        .header-main h1 {
-            margin: 0;
-            color: var(--primary-color);
-            font-size: 2.8em;
+        
+        h1 {
+            font-size: 2.5rem;
             font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
         }
-        .header-main .subtitle {
-            font-size: 1.2em;
-            color: var(--secondary-color);
-            font-weight: 300;
-            margin-top: 5px;
+
+        .tagline {
+            color: var(--accent);
+            font-size: 1.1rem;
+            font-weight: 400;
+            margin-bottom: 20px;
         }
-        .header-links {
+
+        .social-links {
             display: flex;
             gap: 20px;
-            margin-top: 10px;
         }
-        .header-links a {
-            color: var(--accent-color);
+
+        .social-links a {
+            color: var(--text-secondary);
             text-decoration: none;
-            font-weight: 500;
-            font-size: 1.1em;
-            position: relative;
-        }
-        .header-links a::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            transform: scaleX(0);
-            height: 1px;
-            bottom: -3px;
-            left: 0;
-            background-color: var(--accent-color);
-            transform-origin: bottom right;
-            transition: transform 0.25s ease-out;
-        }
-        .header-links a:hover::after {
-            transform: scaleX(1);
-            transform-origin: bottom left;
+            font-size: 1.2rem;
+            transition: color 0.3s;
         }
 
+        .social-links a:hover { color: var(--accent); }
+
+        /* Sections */
+        section { margin-bottom: 60px; }
+        
         h2 {
-            font-size: 1.8em;
-            color: var(--primary-color);
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 15px;
-            margin-top: 50px;
+            font-size: 1.5rem;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 10px;
             margin-bottom: 30px;
-        }
-        h3 {
-            font-size: 1.2em;
-            font-weight: 600;
-            color: var(--text-color);
-            margin-bottom: 8px;
+            color: var(--text-primary);
         }
 
-        .section { margin-bottom: 40px; }
-        .entry { margin-bottom: 30px; }
-        .entry-header {
+        /* Resume Items */
+        .resume-item {
+            margin-bottom: 25px;
+        }
+
+        .resume-header {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
+            margin-bottom: 5px;
             flex-wrap: wrap;
         }
-        .date {
-            font-family: monospace;
-            color: var(--secondary-color);
-            font-size: 0.9em;
-            white-space: nowrap;
-            margin-left: 15px;
-        }
-        .details { margin-top: 8px; font-size: 1em; color: var(--text-color); }
-        .details ul { padding-left: 20px; margin-top: 10px; }
-        .details li { margin-bottom: 5px; }
 
-        /* Publication Specifics */
-        .publication .title {
-            font-weight: 600;
-            font-size: 1.1em;
-            color: var(--text-color);
-        }
-        .publication .authors { font-style: italic; color: var(--secondary-color); margin-top: 4px; }
-        .publication .authors strong { font-style: normal; font-weight: 600; color: var(--text-color); }
-        .publication .venue { font-size: 0.95em; color: var(--secondary-color); margin-top: 4px; }
-        .publication .links { margin-top: 8px; }
-        .publication .links a {
-            font-weight: 500;
-            color: var(--accent-color);
-            text-decoration: none;
-            margin-right: 15px;
-        }
-        .publication .links a:hover { text-decoration: underline; }
+        .role { font-weight: 600; font-size: 1.1rem; color: var(--text-primary); }
+        .company { color: var(--accent); font-weight: 400; }
+        .date { color: var(--text-secondary); font-size: 0.9rem; font-family: monospace; }
+        .description { color: var(--text-secondary); margin-top: 5px; }
 
-        /* Project & Skills Specifics */
-        .project-grid {
+        /* Projects Grid */
+        .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
         }
-        .project-card {
-            border: 1px solid var(--border-color);
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
             padding: 20px;
             border-radius: 8px;
-            transition: box-shadow 0.2s, transform 0.2s;
-        }
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.07);
-        }
-        .project-card h3 { margin-top: 0; }
-        .tech-stack {
-            margin-top: 15px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-        .tech-stack span {
-            background-color: var(--border-color);
-            color: var(--secondary-color);
-            font-size: 0.8em;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-family: monospace;
-        }
-        
-        footer {
-            text-align: center;
-            margin-top: 60px;
-            color: #aaa;
-            font-size: 0.9em;
+            transition: transform 0.2s, border-color 0.2s;
         }
 
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        .card h3 { margin-bottom: 10px; font-size: 1.1rem; }
+        .tech-stack {
+            font-size: 0.8rem;
+            color: var(--accent);
+            margin-bottom: 10px;
+            font-family: monospace;
+        }
+
+        /* Skills Tags */
+        .skills-container { display: flex; flex-wrap: wrap; gap: 10px; }
+        .skill-tag {
+            background: var(--card-bg);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin-top: 80px;
+            padding-bottom: 40px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 16px;
+            background: transparent;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover { background: var(--accent); color: var(--bg-color); }
+
+        /* Responsive */
         @media (max-width: 600px) {
-            header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            .header-links { width: 100%; justify-content: space-between; }
-            .entry-header { flex-direction: column; align-items: flex-start; }
-            .date { margin-left: 0; margin-top: 5px; }
-            .header-main h1 { font-size: 2.2em; }
+            h1 { font-size: 2rem; }
+            .resume-header { flex-direction: column; }
+            .date { margin-top: 2px; }
         }
     </style>
 </head>
 <body>
 
 <div class="container">
+    <!-- Header -->
     <header>
-        <div class="header-main">
-            <h1>Samuele Dell'Erba</h1>
-            <p class="subtitle">Computer Engineering Student & Aspiring AI Researcher</p>
-        </div>
-        <div class="header-links">
-            <a href="mailto:samuele.dellerba@edu.unifi.it">Email</a>
-            <a href="https://github.com/SamyBravy" target="_blank">GitHub</a>
-            <a href="https://linkedin.com/in/samuele-dell-erba" target="_blank">LinkedIn</a>
-            <a href="Curriculum.pdf" target="_blank">CV</a>
+        <h1>Samuele Dell'Erba</h1>
+        <div class="tagline">Computer Engineering Student | AI Researcher | 42 Firenze</div>
+        <p style="color: var(--text-secondary); max-width: 600px; margin-bottom: 20px;">
+            Developing high-performance systems and exploring generative AI. 
+            Currently optimizing text-to-image models at MICC and building AI pipelines at NYOUS.
+            Passionate about low-level programming, distributed systems, and computer vision.
+        </p>
+        <div class="social-links">
+            <a href="https://github.com/SamyBravy" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/samuele-dell-erba" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:samuele.dellerba@edu.unifi.it"><i class="fas fa-envelope"></i></a>
+            <a href="Curriculum.pdf" class="btn" style="margin-top: -5px; padding: 5px 10px;">Download CV</a>
         </div>
     </header>
 
-    <section id="about" class="section">
-        <h2>About Me</h2>
-        <p>
-            I am a final-year B.Sc. student in Computer Engineering at the <strong>University of Florence</strong>, maintaining a GPA of 30/30 with honors. Concurrently, I am completing an advanced curriculum at <strong>École 42 Firenze</strong>, where I was the first in my cohort to finish the Common Core in C/C++ and Unix programming. This dual path allows me to build a robust theoretical foundation in computer science while honing practical software engineering skills.
-        </p>
-        <p>
-            My primary research interests are in <strong>Generative Deep Learning</strong> and <strong>Computer Vision</strong>. I am fascinated by the potential of text-to-image models and am currently working on training-free methods to improve their efficiency and control. I am actively seeking opportunities to contribute to cutting-edge research in a top-tier Master's program.
-        </p>
-    </section>
-
-    <section id="research" class="section">
-        <h2>Research Experience</h2>
-        <div class="entry publication">
-            <div class="entry-header">
-                <div class="title">Training-Free Diffusion Priors for Text-to-Image Generation via Optimization-based Visual Inversion</div>
+    <!-- Experience & Research -->
+    <section>
+        <h2>Experience</h2>
+        
+        <div class="resume-item">
+            <div class="resume-header">
+                <span class="role">Student Researcher <span class="company">— MICC, University of Florence</span></span>
                 <span class="date">Sep 2025 – Nov 2025</span>
             </div>
-            <div class="authors"><strong>S. Dell'Erba</strong>, A. D. Bagdanov</div>
-            <div class="venue">Student Researcher at MICC, University of Florence. Preprint available on arXiv.</div>
-            <div class="details">
-                Conducted research on a novel, training-free method that leverages Optimization-based Visual Inversion (OVI) to replace diffusion priors in text-to-image models. This work aims to enhance the efficiency and interpretability of generative models.
+            <p class="description">
+                Conducted research on a training-free method leveraging Optimization-based Visual Inversion (OVI) to replace diffusion priors in text-to-image models.
+                <br><br>
+                <em>Tech Report:</em> "Training-Free Diffusion Priors for Text-to-Image Generation via Optimization-based Visual Inversion" (2025).
+            </p>
+        </div>
+
+        <div class="resume-item">
+            <div class="resume-header">
+                <span class="role">AI Developer <span class="company">— NYOUS</span></span>
+                <span class="date">Apr 2025 – Present</span>
             </div>
-            <div class="links">
-                <a href="https://arxiv.org/abs/2511.20821" target="_blank">[ arXiv Preprint ]</a>
-                <!-- <a href="#" target="_blank">[ Project Page ]</a> -->
-            </div>
+            <p class="description">
+                Designing AI pipelines for news summarization and avatar-based video anchors. Engineered the Avatar subsystem focusing on audio-driven lip sync and body animation.
+            </p>
         </div>
     </section>
 
-    <section id="education" class="section">
-        <h2>Education</h2>
-        <div class="entry">
-            <div class="entry-header">
-                <h3>B.Sc. in Computer Engineering</h3>
-                <span class="date">Sep 2023 – Jul 2026</span>
-            </div>
-            <div class="details">
-                <strong>University of Florence</strong> — GPA: 30/30 with honors.
-                <ul>
-                    <li>Core Coursework: Algorithms & Data Structures, Theoretical CS, Operating Systems, Probability & Statistics.</li>
-                </ul>
-            </div>
-        </div>
-        <div class="entry">
-            <div class="entry-header">
-                <h3>Peer-to-Peer Coding Curriculum</h3>
-                <span class="date">Oct 2023 – Jul 2026</span>
-            </div>
-            <div class="details">
-                <strong>École 42 Firenze</strong> — Pursued in parallel with university studies.
-                <ul>
-                    <li><strong>Advanced Track in Data & AI (RNCP-7):</strong> Specialization in generative models and advanced ML.</li>
-                    <li><strong>Software Engineering Common Core:</strong> First student of the cohort to complete the curriculum, focusing on C/C++, Unix System Programming, and Concurrency.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="section">
+    <!-- Technical Projects -->
+    <section>
         <h2>Selected Technical Projects</h2>
-        <div class="project-grid">
-            <div class="project-card">
-                <h3>AI Developer @ NYOUS Startup</h3>
-                <div class="details">
-                    Designed and implemented AI pipelines for a news aggregation platform, covering news summarization, audio synthesis, and avatar-based video news generation. Engineered the core avatar subsystem with a focus on audio-driven lip-sync and body animation.
-                </div>
-                <div class="tech-stack">
-                    <span>Python</span><span>PyTorch</span><span>Computer Vision</span><span>NLP</span>
-                </div>
+        <div class="grid">
+            <div class="card">
+                <h3>Distributed Microservices Platform</h3>
+                <div class="tech-stack">Docker, Kubernetes, Redis, Go/Python</div>
+                <p class="description">Engineered a scalable web app using K8s. Integrated Redis for caching, Grafana for monitoring, and real-time WebSockets for a PvP game engine.</p>
             </div>
-            <div class="project-card">
-                <h3>Logistic Regression from Scratch</h3>
-                <div class="details">
-                    Built a multi-class classifier (One-vs-All) using only Python and NumPy, without high-level ML libraries. Implemented Batch and Stochastic Gradient Descent and developed a custom toolkit for statistical analysis and feature correlation visualization.
-                </div>
-                <div class="tech-stack">
-                    <span>Python</span><span>NumPy</span><span>Data Analysis</span><span>ML</span>
-                </div>
+            
+            <div class="card">
+                <h3>Systems Programming Suite</h3>
+                <div class="tech-stack">C, C++, Unix, Assembly</div>
+                <p class="description">Re-implemented standard library functions. Built a Unix Shell (process control), a Ray-Tracer (linear algebra engine), and a non-blocking IRC Server.</p>
             </div>
-            <div class="project-card">
-                <h3>Ray-Tracer in C</h3>
-                <div class="details">
-                    Developed a 3D rendering engine from the ground up in C. The engine features a custom linear algebra library, Phong illumination for realistic lighting, and support for multi-spot light sources, all rendered using a minimal graphics library.
-                </div>
-                <div class="tech-stack">
-                    <span>C</span><span>Linear Algebra</span><span>Computer Graphics</span>
-                </div>
-            </div>
-             <div class="project-card">
-                <h3>Microservices Platform</h3>
-                <div class="details">
-                    Engineered a scalable web application using a microservices architecture. The platform was containerized with Docker, orchestrated with Kubernetes, and featured Redis for caching, Grafana/Prometheus for monitoring, and real-time WebSockets.
-                </div>
-                <div class="tech-stack">
-                    <span>Docker</span><span>Kubernetes</span><span>Redis</span><span>WebSockets</span>
-                </div>
+
+            <div class="card">
+                <h3>ML From Scratch</h3>
+                <div class="tech-stack">Python, NumPy, Math</div>
+                <p class="description">Built a multi-class classifier using Logistic Regression purely in NumPy without high-level ML libraries. Implemented custom Backprop and SGD.</p>
             </div>
         </div>
     </section>
 
-    <section id="honors" class="section">
+    <!-- Education -->
+    <section>
+        <h2>Education</h2>
+        <div class="resume-item">
+            <div class="resume-header">
+                <span class="role">B.Sc. in Computer Engineering</span>
+                <span class="date">2023 – 2026 (Expected)</span>
+            </div>
+            <p class="description">University of Florence | <strong>GPA: 30/30 with honors</strong><br>
+            Core: Algorithms, OS, Theoretical CS, Probability.</p>
+        </div>
+
+        <div class="resume-item">
+            <div class="resume-header">
+                <span class="role">Software Engineering & AI</span>
+                <span class="date">2023 – 2026</span>
+            </div>
+            <p class="description">École 42 Firenze | <strong>RNCP-7 Specialization</strong><br>
+            Peer-to-peer curriculum. Advanced track in Data & AI. First student of the cohort to complete the core curriculum.</p>
+        </div>
+    </section>
+
+    <!-- Honors -->
+    <section>
         <h2>Honors & Leadership</h2>
-        <div class="details">
-            <ul>
-                <li><strong>EUniWell Student Board Member & Grant Reviewer:</strong> Elected to represent the University of Florence in the European University for Well-Being alliance, focusing on social well-being and sustainability.</li>
-                <li><strong>Selected for 42 Global Games, Paris (Oct 2025):</strong> Chosen as one of the top 4 students to represent 42 Firenze based on technical scores and community engagement.</li>
-                <li><strong>Best Idea Award, Hack Attack Hackathon (Jul 2024):</strong> Awarded for designing a noise-pollution awareness social network.</li>
-                <li><strong>Carta del Merito (Jan 2024):</strong> Monetary award from the Italian Ministry of Education for achieving the maximum score (100/100) in the national high school examination.</li>
-            </ul>
+        <div class="grid">
+            <div class="card" style="border: none; padding: 10px 0; background: none;">
+                <h3 style="margin-bottom: 5px;">🏆 Selected for 42 Global Games</h3>
+                <p class="description">Top 4 students representing 42 Firenze in Paris based on technical scores.</p>
+            </div>
+            <div class="card" style="border: none; padding: 10px 0; background: none;">
+                <h3 style="margin-bottom: 5px;">💡 Best Idea Award</h3>
+                <p class="description">Hack Attack Hackathon (Nana Bianca × 42) for noise-pollution awareness network.</p>
+            </div>
+            <div class="card" style="border: none; padding: 10px 0; background: none;">
+                <h3 style="margin-bottom: 5px;">🏛️ Student Board Member</h3>
+                <p class="description">EUniWell Alliance & University of Florence Course Representative.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section>
+        <h2>Technical Skills</h2>
+        <div class="skills-container">
+            <span class="skill-tag">C / C++</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Rust</span>
+            <span class="skill-tag">PyTorch</span>
+            <span class="skill-tag">Computer Vision</span>
+            <span class="skill-tag">Diffusion Models</span>
+            <span class="skill-tag">Docker & K8s</span>
+            <span class="skill-tag">Linux / Bash</span>
+            <span class="skill-tag">Assembly</span>
+            <span class="skill-tag">Git</span>
         </div>
     </section>
 
     <footer>
-        &copy; 2025 Samuele Dell'Erba.
+        <p>&copy; 2025 Samuele Dell'Erba. Built with code, not builders.</p>
     </footer>
 </div>
 
